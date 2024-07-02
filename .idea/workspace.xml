@@ -5,37 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee2a642c-c4c4-4a4d-9d07-e7814748a061" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kubernetes-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/discovery.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/schools.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/students.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/clinet/StudentClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/controller/SchoolController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/dto/FullSchoolResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/dto/StudentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/entity/SchoolEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/repository/SchoolRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/service/SchoolService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school/src/main/java/com/example/school/service/impl/SchoolServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/src/main/java/com/example/students/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/src/main/java/com/example/students/entities/StudentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/src/main/java/com/example/students/repository/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/src/main/java/com/example/students/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/src/main/java/com/example/students/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4a2b903e8d93446afc7227fac112310bad98f128" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -67,8 +42,7 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2TTvwPMQd0csgfM6MDVA4k9oLJ6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -172,6 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.All in generated-requests" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="HTTP Request.All in generated-requests" />
       </list>
@@ -192,11 +169,28 @@
       <workItem from="1691259739996" duration="1713000" />
       <workItem from="1691261478961" duration="3594000" />
       <workItem from="1691265087678" duration="4831000" />
+      <workItem from="1693330064680" duration="681000" />
+      <workItem from="1693415321904" duration="97000" />
+      <workItem from="1693417874134" duration="959000" />
+      <workItem from="1694332222627" duration="2674000" />
     </task>
+    <task id="LOCAL-00001" summary="microservices example">
+      <option name="closed" value="true" />
+      <created>1693330338788</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693330338788</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="microservices example" />
+    <option name="LAST_COMMIT_MESSAGE" value="microservices example" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

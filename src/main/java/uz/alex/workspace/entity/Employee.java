@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Date;
@@ -15,6 +17,7 @@ import java.util.Objects;
 @Getter
 @ToString
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
     @SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq")
@@ -29,8 +32,12 @@ public class Employee {
     private String phone;
     @Column(name = "data_status")
     private String dataStatus;
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(updatable = false, name = "created_at")
     private Date createdAt;
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Date updatedAt;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_id")
     private Positions position;
@@ -46,9 +53,6 @@ public class Employee {
         Employee employee = (Employee) o;
         return getId() != null && Objects.equals(getId(), employee.getId());
     }
-
-    @Column(name = "updated_at")
-    private Date updatedAt;
 
     @Override
     public final int hashCode() {

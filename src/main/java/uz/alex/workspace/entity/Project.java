@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.math.BigDecimal;
@@ -32,8 +34,10 @@ public class Project {
     private BigDecimal residualSum;
     @Column(name = "data_status")
     private String dataStatus;
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(updatable = false, name = "created_at")
     private Date createdAt;
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private Date updatedAt;
 

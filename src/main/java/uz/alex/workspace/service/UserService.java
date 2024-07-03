@@ -1,5 +1,7 @@
 package uz.alex.workspace.service;
 
+import uz.alex.workspace.model.LoginResponse;
+import uz.alex.workspace.model.LoginUserModel;
 import uz.alex.workspace.model.UserModel;
 
 import java.util.List;
@@ -14,4 +16,6 @@ public interface UserService {
     UserModel updateUser(UserModel user);
 
     void deleteUser(Long id);
+
+    LoginResponse authenticate(LoginUserModel input);
 }

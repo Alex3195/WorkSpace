@@ -76,9 +76,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         if (employeeModel.getId() != null) {
             employee.setDataStatus(DataStatusEnum.UPDATED.name());
-            employee.setUpdatedAt(new Date());
         } else {
-            employee.setUpdatedAt(new Date());
             employee.setDataStatus(DataStatusEnum.CREATED.name());
         }
         return employee;

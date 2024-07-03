@@ -70,10 +70,8 @@ public class DepartmentServiceImpl implements DepartmentService {
         department.setName(departmentModel.getName());
         department.setDescription(departmentModel.getDescription());
         if (departmentModel.getId() != null) {
-            department.setUpdatedAt(new Date());
             department.setDataStatus(DataStatusEnum.UPDATED.name());
         } else {
-            department.setCreatedAt(new Date());
             department.setDataStatus(DataStatusEnum.CREATED.name());
         }
         return department;

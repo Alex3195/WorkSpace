@@ -3,6 +3,8 @@ package uz.alex.workspace.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Date;
@@ -23,8 +25,10 @@ public class Department {
     private String description;
     @Column(name = "data_status")
     private String dataStatus;
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(updatable = false, name = "created_at")
     private Date createdAt;
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private Date updatedAt;
 

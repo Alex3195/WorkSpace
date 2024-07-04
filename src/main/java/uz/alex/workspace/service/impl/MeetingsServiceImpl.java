@@ -6,6 +6,7 @@ import uz.alex.workspace.entity.Meetings;
 import uz.alex.workspace.model.MeetingsModel;
 import uz.alex.workspace.repositories.MeetingsRepository;
 import uz.alex.workspace.service.MeetingsService;
+import uz.alex.workspace.util.DateUtil;
 
 import java.util.List;
 import java.util.Optional;
@@ -56,8 +57,8 @@ public class MeetingsServiceImpl implements MeetingsService {
         meetingModel.setTitle(meeting.getTitle());
         meetingModel.setDescription(meeting.getDescription());
         meetingModel.setLink(meeting.getLink());
-        meetingModel.setStartTime(meeting.getStartTime());
-        meetingModel.setEndTime(meeting.getEndTime());
+        meetingModel.setStartTime(DateUtil.dateToString(meeting.getStartTime()));
+        meetingModel.setEndTime(DateUtil.dateToString(meeting.getEndTime()));
         meetingModel.setStatus(meeting.getStatus());
         return meetingModel;
     }
@@ -68,8 +69,8 @@ public class MeetingsServiceImpl implements MeetingsService {
         meeting.setTitle(meetingModel.getTitle());
         meeting.setDescription(meetingModel.getDescription());
         meeting.setLink(meetingModel.getLink());
-        meeting.setStartTime(meetingModel.getStartTime());
-        meeting.setEndTime(meetingModel.getEndTime());
+        meeting.setStartTime(DateUtil.stringToDate(meetingModel.getStartTime()));
+        meeting.setEndTime(DateUtil.stringToDate(meetingModel.getEndTime()));
         meeting.setStatus(meetingModel.getStatus());
         if (meetingModel.getId() != null)
             meeting.setDataStatus(DataStatusEnum.UPDATED.name());

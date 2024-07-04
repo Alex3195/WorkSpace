@@ -7,6 +7,6 @@ import uz.alex.workspace.entity.Meetings;
 import java.util.List;
 
 public interface MeetingsRepository extends JpaRepository<Meetings, Integer> {
-    @Query(value = "select e from Meetings e where e.dataStatus <> 'DELETED' and e.startTime < current_timestamp() and e.endTime< current_timestamp()")
+    @Query(value = "select e from Meetings e where e.dataStatus <> 'DELETED'")
     List<Meetings> findAllActiveMeetings();
 }

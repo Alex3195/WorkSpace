@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/position")
+//@CrossOrigin(allowedHeaders = "*",origins = "http://localhost3000")
 public class PositionsController {
     private final PositionsService positionsService;
 

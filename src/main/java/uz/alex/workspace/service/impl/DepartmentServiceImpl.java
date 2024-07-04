@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<DepartmentModel> getAllDepartments() {
-        List<Department> departments = departmentRepository.findAll();
+        List<Department> departments = departmentRepository.findAllDeletedDepartments();
         return departments.stream().map(this::departmentEntityToModel).toList();
     }
 

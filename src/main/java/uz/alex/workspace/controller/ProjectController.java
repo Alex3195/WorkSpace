@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/project")
+//@CrossOrigin(allowedHeaders = "*",origins = "http://localhost3000")
 public class ProjectController {
     private final ProjectService projectService;
 

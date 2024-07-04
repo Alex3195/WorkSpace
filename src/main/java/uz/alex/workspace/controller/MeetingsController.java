@@ -8,7 +8,8 @@ import uz.alex.workspace.service.MeetingsService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/meetings")
+@RequestMapping("/meeting")
+//@CrossOrigin(allowedHeaders = "*",origins = "http://localhost3000")
 public class MeetingsController {
     private final MeetingsService meetingsService;
 

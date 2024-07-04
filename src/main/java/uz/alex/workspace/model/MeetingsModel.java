@@ -10,7 +10,7 @@ public class MeetingsModel {
     private String title;
     private String description;
     private String link;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
     private String status;
 }

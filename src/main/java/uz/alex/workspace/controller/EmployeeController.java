@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
+//@CrossOrigin(allowedHeaders = "*",origins = "http://localhost3000")
 public class EmployeeController {
     private final EmployeeService employeeService;
 

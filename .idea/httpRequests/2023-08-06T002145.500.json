@@ -1,6 +1,0 @@
-{
-  "timestamp": "2023-08-05T19:21:45.036+00:00",
-  "status": 500,
-  "error": "Internal Server Error",
-  "path": "/api/v1/school/with-student/1"
-}

@@ -7,7 +7,6 @@ import uz.alex.workspace.repositories.RoleRepository;
 import uz.alex.workspace.service.RoleService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class RoleServiceImpl implements RoleService {

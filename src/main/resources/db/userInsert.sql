@@ -1,0 +1,1 @@
+INSERT INTO public.users (is_enable, created_at, id, updated_at, first_name, last_name, password, phone, role, username) VALUES (true, '2024-07-02 23:42:34.094000', 1, '2024-07-02 23:42:34.094000', 'Alex', 'King', '$2a$10$zfELRy6oiHIdaFYz/gEn.elvXcG4icHG.VFAPmx4I/nQhRoPsWLe.', '+998900416561', 'USER', 'alexking95@gmail.com');

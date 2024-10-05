@@ -1,11 +1,11 @@
 package uz.alex.workspace.service;
 
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.DepartmentModel;
 
-import java.util.List;
-
 public interface DepartmentService {
-    List<DepartmentModel> getAllDepartments();
+    DataTableForm getAllDepartments(FilterForm filter);
     DepartmentModel getDepartmentById(int id);
     DepartmentModel createDepartment(DepartmentModel department);
     DepartmentModel updateDepartment(DepartmentModel department);

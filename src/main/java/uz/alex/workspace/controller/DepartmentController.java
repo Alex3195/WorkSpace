@@ -2,10 +2,11 @@ package uz.alex.workspace.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.DepartmentModel;
 import uz.alex.workspace.service.DepartmentService;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/department")
@@ -23,8 +24,8 @@ public class DepartmentController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<DepartmentModel>> getAllDepartments() {
-        return ResponseEntity.ok(departmentService.getAllDepartments());
+    public ResponseEntity<DataTableForm> getAllDepartments(@RequestBody FilterForm filter) {
+        return ResponseEntity.ok(departmentService.getAllDepartments(filter));
     }
 
     @PostMapping("/add")

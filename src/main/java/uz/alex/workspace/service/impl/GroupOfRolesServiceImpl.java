@@ -1,13 +1,20 @@
 package uz.alex.workspace.service.impl;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import uz.alex.workspace.entity.GroupOfRoles;
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.GroupOfRolesModel;
 import uz.alex.workspace.repositories.GroupOfRolesRepository;
 import uz.alex.workspace.service.GroupOfRolesService;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,9 +34,23 @@ public class GroupOfRolesServiceImpl implements GroupOfRolesService {
     }
 
     @Override
-    public List<GroupOfRolesModel> getAllGroupOfRoles() {
-        List<GroupOfRoles> groupOfRoles = repository.findAll();
-        return groupOfRoles.stream().map(x -> modelMapper.map(x, GroupOfRolesModel.class)).toList();
+    public DataTableForm getAllGroupOfRoles(FilterForm filter) {
+        PageRequest page = PageRequest.of(filter.getStart() / filter.getLength(), filter.getLength());
+        Specification<GroupOfRoles> spec = null;
+        String search = filter.getSearch().getValue();
+        if (search != null && !search.isEmpty()) {
+            spec = Specification.where(searchDataByName(search));
+        }
+        assert spec != null;
+        Page<GroupOfRoles> aicModels = repository.findAll(spec, page);
+        long count = repository.count(spec);
+        DataTableForm dataTablesForm = new DataTableForm();
+        dataTablesForm.setDraw(filter.getDraw());
+        dataTablesForm.setRecordsTotal((int) count);
+        dataTablesForm.setRecordsFiltered((int) count);
+        dataTablesForm.setData(aicModels.map(x -> modelMapper.map(x, GroupOfRolesModel.class)).stream().toList());
+        return dataTablesForm;
+
     }
 
     @Override
@@ -59,4 +80,14 @@ public class GroupOfRolesServiceImpl implements GroupOfRolesService {
             repository.save(groupOfRoles.get());
         }
     }
+
+    private Specification<GroupOfRoles> searchDataByName(String search) {
+        return (Root<GroupOfRoles> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
+            if (search == null) {
+                return criteriaBuilder.conjunction(); // No filtering if name is null
+            }
+            return criteriaBuilder.like(root.get("name"), "%" + search + "%");
+        };
+    }
+
 }

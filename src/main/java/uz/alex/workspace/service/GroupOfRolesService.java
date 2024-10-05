@@ -1,13 +1,13 @@
 package uz.alex.workspace.service;
 
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.GroupOfRolesModel;
-
-import java.util.List;
 
 public interface GroupOfRolesService {
     GroupOfRolesModel getGroupOfRolesById(Integer id);
 
-    List<GroupOfRolesModel> getAllGroupOfRoles();
+    DataTableForm getAllGroupOfRoles(FilterForm filter);
 
     GroupOfRolesModel saveGroupOfRoles(GroupOfRolesModel model);
 

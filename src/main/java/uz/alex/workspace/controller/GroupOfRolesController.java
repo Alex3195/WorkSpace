@@ -2,10 +2,11 @@ package uz.alex.workspace.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.GroupOfRolesModel;
 import uz.alex.workspace.service.GroupOfRolesService;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/group-of-roles")
@@ -16,9 +17,9 @@ public class GroupOfRolesController {
         this.service = service;
     }
 
-    @GetMapping("/all")
-    private ResponseEntity<List<GroupOfRolesModel>> getAllGroupOfRoles() {
-        return ResponseEntity.ok(service.getAllGroupOfRoles());
+    @PostMapping("/all")
+    private ResponseEntity<DataTableForm> getAllGroupOfRoles(@RequestBody FilterForm form) {
+        return ResponseEntity.ok(service.getAllGroupOfRoles(form));
     }
 
     @GetMapping("/{id}")
@@ -26,7 +27,7 @@ public class GroupOfRolesController {
         return ResponseEntity.ok(service.getGroupOfRolesById(id));
     }
 
-    @PostMapping("/save")
+    @PostMapping("/add")
     public ResponseEntity<GroupOfRolesModel> saveGroupOfRoles(@RequestBody GroupOfRolesModel data) {
         return ResponseEntity.ok(service.saveGroupOfRoles(data));
     }

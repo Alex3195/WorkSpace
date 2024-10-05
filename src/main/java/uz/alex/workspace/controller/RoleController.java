@@ -2,10 +2,10 @@ package uz.alex.workspace.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.RoleModel;
 import uz.alex.workspace.service.RoleService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/roles")
@@ -16,9 +16,9 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<RoleModel>> getAllRoles() {
-        return ResponseEntity.ok(roleService.getRoles());
+    @PostMapping("/all")
+    public ResponseEntity<DataTableForm> getAllRoles(@RequestBody FilterForm filter) {
+        return ResponseEntity.ok(roleService.getRoles(filter));
     }
 
     @GetMapping("/{id}")

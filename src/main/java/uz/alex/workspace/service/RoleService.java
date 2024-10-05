@@ -1,11 +1,12 @@
 package uz.alex.workspace.service;
 
+import uz.alex.workspace.form.DataTableForm;
+import uz.alex.workspace.form.FilterForm;
 import uz.alex.workspace.model.RoleModel;
 
-import java.util.List;
 
 public interface RoleService {
-    List<RoleModel> getRoles();
+    DataTableForm getRoles(FilterForm filter);
 
     RoleModel getRole(int id);
 
